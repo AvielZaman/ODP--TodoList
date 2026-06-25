@@ -1,11 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Todo list </title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="sidebar-heading">
+            <h2> Doable </h2>
+            <hr>
+
+            <div class="views">
+                <ul id="views-items">
+                    <li> <button id="view-btn"> Today </button> <span id="amount"> 0 </span> </li>
+                    <li> <button id="view-btn"> All tasks </button> <span id="amount"> 0 </span> </li>
+                    <li> <button id="view-btn"> Upcoming </button> </li>
+                </ul>
+
+            </div>
+            <div class="projects">
+                <ul id="projects-items">
+                    <li> <button id="project-btn"> Default </button> <span id="amount"> 0 </span> </li>
+                    <li> <button id="project-btn"> Work </button> <span id="amount"> 0 </span> </li>
+                    <li> <button id="project-btn"> Personal </button> <span id="amount"> 0 </span> </li>
+                </ul>
+                <button id="add-project"> Add project </button>
+            </div>
+        </div>
+
+        <div class="header-content">
+            <div class="header">
+                <!-- add dymanic top-header -->
+                <div class="top-header"></div>
+
+                <div class="header-buttons">
+                    <button id="header-btn"> Filter </button>
+                    <button id="header-btn"> Sort </button>
+                    <button id="header-btn"> Add task </button>
+                </div>
+                <hr>
+            </div>
+
+            <div class="tabs">
+                <ul id="tabs-list">
+                    <button id="tabs-btn"> All </button>
+                    <button id="tabs-btn"> Active </button>
+                    <button id="tabs-btn"> Completed </button>
+                    <button id="tabs-btn"> High priority </button>
+                </ul>
+            </div>
+
+            <div class="todos-section">
+                <!-- add dynamic small header to each group of items -->
+                 <!-- this is an example of how should it be -->
+                 <div class="view-todos">
+                    <h3> Today </h3>
+
+                    <div class="view-todos">
+                        <div class="view-todos-item">
+                            <div class="checklist">
+                                <input id="check" type="radio">
+                                <div class="todo-details">
+                                    <h2> Submit project proposal to client </h2>
+                                    <div class="bottom">
+                                        <p>  High </p>
+                                        <p> Yesterday </p>
+                                        <p> Work </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="view-todos-item">
+                            <div class="checklist">
+                                <input id="check" type="radio">
+                                <div class="todo-details">
+                                    <h2> Buy groceries for the week </h2>
+                                    <div class="bottom">
+                                        <p>  Medium </p>
+                                        <p> Today </p>
+                                        <p> Personal </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="view-todos-item">
+                            <div class="checklist">
+                                <input id="check" type="radio">
+                                <div class="todo-details">
+                                    <h2> Set up dev environment </h2>
+                                    <div class="bottom">
+                                        <p>  Low </p>
+                                        <p> Today </p>
+                                        <p> Work </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
