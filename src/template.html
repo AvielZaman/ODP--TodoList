@@ -39,7 +39,7 @@
                 <div class="header-buttons">
                     <button id="header-btn"> Filter </button>
                     <button id="header-btn"> Sort </button>
-                    <button id="header-btn"> Add task </button>
+                    <button id="header-btn" command="show-modal" commandfor="add-task-dialog"> Add task </button>
                 </div>
                 <hr>
             </div>
@@ -53,10 +53,56 @@
                 </ul>
             </div>
 
+            <dialog id="add-task-dialog">
+                <form class="add-task-form" action="">
+                    <fieldset>
+                        <legend> New Task </legend>
+                        <hr>
+                        <div class="input-group">
+                            <label for="title"> Title *</label>
+                            <input type="text" id="title" name="title" required placeholder="What needs to be done?"
+                                spellcheck="true">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="desc"> Description </label>
+                            <textarea id="desc" name="desc" placeholder="Add details..."
+                                spellcheck="true"></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="due-date"> Due Date </label>
+                            <input type="date" id="due-date" name="due-date">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="project"> Project </label>
+                            <input type="text" id="project" name="project" value="Default">
+                        </div>
+
+                        <div class="input-group">
+                            <label> Priority </label><br>
+
+                            <label for="priority-high"> High </label>
+                            <input type="radio" id="priority-high" name="priority" value="high">
+
+                            <label for="priority-medium"> Medium </label>
+                            <input type="radio" id="priority-medium" name="priority" value="medium" checked>
+
+                            <label for="priority-low"> Low </label>
+                            <input type="radio" id="priority-low" name="priority" value="low" checked>
+                        </div>
+
+                        <button id="cancel" commandfor="add-task-dialog" command="close" type="button"> Cancel </button>
+                        <button id="submits" type="submit"> Add Task </button>
+                    </fieldset>
+                </form>
+            </dialog>
+
             <div class="todos-section">
                 <!-- add dynamic small header to each group of items -->
-                 <!-- this is an example of how should it be -->
-                 <div class="view-todos">
+                <!-- this is an example of how it should be -->
+                <div class="view-todos">
                     <h3> Today </h3>
 
                     <div class="view-todos">
@@ -66,7 +112,7 @@
                                 <div class="todo-details">
                                     <h2> Submit project proposal to client </h2>
                                     <div class="bottom">
-                                        <p>  High </p>
+                                        <p> High </p>
                                         <p> Yesterday </p>
                                         <p> Work </p>
                                     </div>
@@ -80,7 +126,7 @@
                                 <div class="todo-details">
                                     <h2> Buy groceries for the week </h2>
                                     <div class="bottom">
-                                        <p>  Medium </p>
+                                        <p> Medium </p>
                                         <p> Today </p>
                                         <p> Personal </p>
                                     </div>
@@ -94,7 +140,7 @@
                                 <div class="todo-details">
                                     <h2> Set up dev environment </h2>
                                     <div class="bottom">
-                                        <p>  Low </p>
+                                        <p> Low </p>
                                         <p> Today </p>
                                         <p> Work </p>
                                     </div>
@@ -102,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-                 </div>
+                </div>
             </div>
         </div>
     </div>
