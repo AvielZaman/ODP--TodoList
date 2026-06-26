@@ -66,8 +66,7 @@
 
                         <div class="input-group">
                             <label for="desc"> Description </label>
-                            <textarea id="desc" name="desc" placeholder="Add details..."
-                                spellcheck="true"></textarea>
+                            <textarea id="desc" name="desc" placeholder="Add details..." spellcheck="true"></textarea>
                         </div>
 
                         <div class="input-group">
@@ -90,11 +89,74 @@
                             <input type="radio" id="priority-medium" name="priority" value="medium" checked>
 
                             <label for="priority-low"> Low </label>
-                            <input type="radio" id="priority-low" name="priority" value="low" checked>
+                            <input type="radio" id="priority-low" name="priority" value="low">
                         </div>
 
                         <button id="cancel" commandfor="add-task-dialog" command="close" type="button"> Cancel </button>
                         <button id="submits" type="submit"> Add Task </button>
+                    </fieldset>
+                </form>
+            </dialog>
+
+            <dialog id="detail-panel-dialog">
+                <form class="detail-panel-form" action="">
+                    <fieldset>
+                        <legend> Task detail </legend>
+                        <hr>
+                        <!-- need to be dynamically filled from the task that was clicked -->
+                        <div class="input-group">
+                            <label for="title"> Title * </label>
+                            <input type="text" id="title" name="title" required
+                                value="Submit project proposal to client" spellcheck="true">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="desc"> Description </label>
+                            <textarea id="desc" name="desc" value="Finalize the Q3 proposal and send to Sarah.
+                            Include revised budget breakdown and timeline." spellcheck="true"></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="due-date"> Due Date </label>
+                            <input type="date" id="due-date" name="due-date" value="23/06/2026">
+                        </div>
+
+                        <div class="input-group">
+                            <label for="project"> Project </label>
+                            <input type="text" id="project" name="project" value="Work">
+                        </div>
+
+                        <div class="input-group">
+                            <label> Priority </label><br>
+
+                            <label for="priority-high"> High </label>
+                            <input type="radio" id="priority-high" name="priority" value="high">
+
+                            <label for="priority-medium"> Medium </label>
+                            <input type="radio" id="priority-medium" name="priority" value="medium" checked>
+
+                            <label for="priority-low"> Low </label>
+                            <input type="radio" id="priority-low" name="priority" value="low">
+                        </div>
+
+                        <div class="input-group">
+                            <label> Checklist </label><br>
+
+                            <input type="checkbox" id="check1" name="tasks" value="Draft outline">
+                            <label for="check1">Draft outline</label><br>
+
+                            <input type="checkbox" id="check2" name="tasks" value="Add budget table">
+                            <label for="check2">Add budget table</label><br>
+
+                            <input type="checkbox" id="check3" name="tasks" value="Review with manager">
+                            <label for="check3">Review with manager</label><br>
+
+                            <input type="checkbox" id="check4" name="tasks" value="Send to client">
+                            <label for="check4">Send to client</label><br>
+                        </div>
+
+                        <button id="close" commandfor="detail-panel-dialog" command="close" type="button"> Cancel </button>
+                        <button id="submits" type="submit"> Save changes </button>
                     </fieldset>
                 </form>
             </dialog>
@@ -104,7 +166,11 @@
                 <!-- this is an example of how it should be -->
                 <div class="view-todos">
                     <h3> Today </h3>
-
+                    <!-- just to test the dialog, remove after testing -->
+                    <button command="show-modal" commandfor="detail-panel-dialog"> open details </button>
+                    <button id="cancel" commandfor="add-task-dialog" command="close" type="button"> Cancel </button>
+                    <!---->
+                    
                     <div class="view-todos">
                         <div class="view-todos-item">
                             <div class="radio">
