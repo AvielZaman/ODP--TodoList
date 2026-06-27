@@ -3,6 +3,7 @@
     --hr-bgn: rgb(199, 199, 199);
     --sidebar-bgn: rgb(226, 226, 226);
     --heading-color: rgb(151, 149, 149);
+    --add-task-bgn: #a78bfa;
 }
 
 * {
@@ -135,4 +136,233 @@ hr {
     border: 2px dashed var(--hr-bgn);
     border-radius: 8px;
     color: var(--heading-color);
+}
+
+/* HEADER-CONTENT SECTION */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.top-header {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.header-buttons button {
+    all: unset;
+    border: 1px solid var(--hr-bgn);
+    cursor: pointer;
+    padding: 8px 25px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.header-buttons button:hover {
+    background-color: rgb(172, 172, 172);
+}
+
+.header-btn:nth-child(3) {
+    background-color: var(--add-task-bgn);
+    color: white;
+}
+
+/* tabs */
+.tabs {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    padding: 8px 0 8px 15px;
+}
+
+.tabs button {
+    all: unset;
+    cursor: pointer;
+    padding: 8px 10px;
+    border: 1px solid var(--hr-bgn);
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.tabs button:focus,
+.tabs button:hover {
+    background-color: var(--add-task-bgn);
+}
+
+/* add-task-dialog */
+#add-task-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: min(480px, 92vw);
+    background: var(#f5efe6);
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(20, 10, 4, 0.45);
+    padding: 0;
+}
+
+#add-task-dialog::backdrop {
+    background: rgba(20, 10, 4, 0.65);
+    backdrop-filter: blur(3px);
+}
+
+.add-task-form fieldset {
+    border: none;
+    padding: 0 36px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.add-task-form legend {
+    font-size: 24px;
+    padding-top: 32px;
+    width: 100%;
+}
+
+.add-task-form hr {
+    border: none;
+    border-top: 1.5px solid #ddd;
+    margin: 8px 0 0 0;
+}
+
+input,
+textarea{
+    background-color: rgb(235, 232, 232);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--hr-bgn);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.input-group input[type="text"],
+.input-group input[type="date"] {
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+.input-group textarea {
+    padding: 10px 14px;
+    border: 1.5px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: blue;
+    box-shadow: 0 0 0 3px rgba(155, 122, 79, 0.18);
+}
+
+.add-task-form-close:hover {
+    background: #eee;
+    color: #333;
+    transform: none;
+    box-shadow: none;
+}
+
+#submits,
+#cancel {
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 11px 24px;
+    cursor: pointer;
+}
+
+#submits{
+    background-color: var(--add-task-bgn);
+}
+
+#submits:hover,
+#cancel:hover {
+    background: var(--hr-bgn);
+    transform: none;
+    box-shadow: none;
+}
+
+.input-row {
+    display: flex;
+    gap: 16px;
+}
+
+.input-row .input-group {
+    flex: 1;
+}
+
+.priority-group {
+    display: flex;
+    gap: 8px;
+}
+
+.priority-btn {
+    border: 1.5px solid #ddd;
+    background: white;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.priority-btn:nth-child(1):focus,
+.priority-btn:nth-child(1):hover {
+    border-color: red;
+    color: red;
+}
+
+.priority-btn:nth-child(2):focus,
+.priority-btn:nth-child(2):hover {
+    border-color: orange;
+    color: orange;
+}
+
+.priority-btn:nth-child(3):focus,
+.priority-btn:nth-child(3):hover {
+    border-color: rgb(103, 206, 219);
+    color:rgb(103, 206, 219);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+#cancel {
+    background: white;
+    color: #333;
+    border: 1.5px solid #ddd;
+}
+
+#cancel:hover {
+    background: #f5f5f5;
 }
