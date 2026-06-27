@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Todo list </title>
+    <!-- remove after finishing css-->
+    <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -13,20 +15,41 @@
             <h2> Doable </h2>
             <hr>
 
-            <div class="views">
+            <div class="views-projects">
+                <h3> VIEWS </h3>
                 <ul id="views-items">
-                    <li> <button id="view-btn"> Today </button> <span id="amount"> 0 </span> </li>
-                    <li> <button id="view-btn"> All tasks </button> <span id="amount"> 0 </span> </li>
-                    <li> <button id="view-btn"> Upcoming </button> </li>
+                    <li> <button class="view-btn"> Today <span class="amount"> 0 </span> </button> </li>
+                    <li> <button class="view-btn"> All tasks <span class="amount"> 0 </span> </button> </li>
+                    <li> <button class="view-btn"> Upcoming </button> </li>
+                </ul>
+                <h3> PROJECTS </h3>
+                <ul id="projects-items">
+                    <li><button class="project-btn">
+                            <div class="btn-left">
+                                <div class="circle circle-default"></div>
+                                Default
+                            </div>
+                            <span class="amount">0</span>
+                        </button>
+                    </li>
+                    <li><button class="project-btn">
+                            <div class="btn-left">
+                                <div class="circle circle-work"></div>
+                                Work
+                            </div>
+                            <span class="amount">0</span>
+                        </button>
+                    </li>
+                    <li><button class="project-btn">
+                            <div class="btn-left">
+                                <div class="circle circle-personal"></div>
+                                Personal
+                            </div>
+                            <span class="amount">0</span>
+                        </button>
+                    </li>
                 </ul>
 
-            </div>
-            <div class="projects">
-                <ul id="projects-items">
-                    <li> <button id="project-btn"> Default </button> <span id="amount"> 0 </span> </li>
-                    <li> <button id="project-btn"> Work </button> <span id="amount"> 0 </span> </li>
-                    <li> <button id="project-btn"> Personal </button> <span id="amount"> 0 </span> </li>
-                </ul>
                 <button id="add-project"> Add project </button>
             </div>
         </div>
@@ -37,9 +60,9 @@
                 <div class="top-header"></div>
 
                 <div class="header-buttons">
-                    <button id="header-btn"> Filter </button>
-                    <button id="header-btn"> Sort </button>
-                    <button id="header-btn" command="show-modal" commandfor="add-task-dialog"> Add task </button>
+                    <button class="header-btn"> Filter </button>
+                    <button class="header-btn"> Sort </button>
+                    <button class="header-btn" command="show-modal" commandfor="add-task-dialog"> Add task </button>
                 </div>
                 <hr>
             </div>
@@ -155,7 +178,8 @@
                             <label for="check4">Send to client</label><br>
                         </div>
 
-                        <button id="close" commandfor="detail-panel-dialog" command="close" type="button"> Cancel </button>
+                        <button id="close" commandfor="detail-panel-dialog" command="close" type="button"> Cancel
+                        </button>
                         <button id="submits" type="submit"> Save changes </button>
                     </fieldset>
                 </form>
@@ -170,7 +194,7 @@
                     <button command="show-modal" commandfor="detail-panel-dialog"> open details </button>
                     <button id="cancel" commandfor="add-task-dialog" command="close" type="button"> Cancel </button>
                     <!---->
-                    
+
                     <div class="view-todos">
                         <div class="view-todos-item">
                             <div class="radio">

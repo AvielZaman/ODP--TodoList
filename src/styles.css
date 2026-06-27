@@ -1,5 +1,138 @@
-*{
+:root {
+    --btn-bgn: rgb(175, 54, 231);
+    --hr-bgn: rgb(199, 199, 199);
+    --sidebar-bgn: rgb(226, 226, 226);
+    --heading-color: rgb(151, 149, 149);
+}
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    min-height: 100vh;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--hr-bgn);
+}
+
+/* SIDEBAR-HEADING SECTION */
+
+.sidebar-heading {
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--sidebar-bgn);
+}
+
+.sidebar-heading h2 {
+    padding: 15px 0 0 15px;
+    font-weight: 400;
+}
+
+/* views-projects */
+.views-projects {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+.views-projects>h3 {
+    font-weight: 400;
+    color: var(--heading-color);
+    font-size: 18px;
+}
+
+#views-items,
+#projects-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+}
+
+#views-items li,
+#projects-items li {
+    width: 100%;
+}
+
+#views-items button,
+#projects-items button {
+    all: unset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.btn-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+}
+
+.circle-default {
+    background-color: #a78bfa;
+}
+
+.circle-work {
+    background-color: #34d399;
+}
+
+.circle-personal {
+    background-color: #f87171;
+}
+
+#views-items button:hover,
+#projects-items button:hover,
+#add-project:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.amount {
+    font-size: 18px;
+    color: gray;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-project {
+    all: unset;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 8px 12px;
+    border: 2px dashed var(--hr-bgn);
+    border-radius: 8px;
+    color: var(--heading-color);
 }
