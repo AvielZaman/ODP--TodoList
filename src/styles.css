@@ -276,6 +276,10 @@ hr {
     color: var(--heading-color);
 }
 
+.bottom p{
+    text-transform: capitalize;
+}
+
 .tag {
     padding: 2px 8px;
     border-radius: 12px;

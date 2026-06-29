@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Todo list </title>
-    <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -120,48 +119,7 @@
             <div class="todos-section">
                 <div class="view-todos">
                     <h3 class="group-heading"> Today </h3>
-
-                    <div class="view-todos-item">
-                        <div class="radio">
-                            <input type="radio">
-                            <div class="todo-details">
-                                <h2> Submit project proposal to client </h2>
-                                <div class="bottom">
-                                    <p class="tag high"> High </p>
-                                    <p> Yesterday </p>
-                                    <p> Work </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="view-todos-item">
-                        <div class="radio">
-                            <input type="radio">
-                            <div class="todo-details">
-                                <h2> Buy groceries for the week </h2>
-                                <div class="bottom">
-                                    <p class="tag medium"> Medium </p>
-                                    <p> Today </p>
-                                    <p> Personal </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="view-todos-item">
-                        <div class="radio">
-                            <input type="radio">
-                            <div class="todo-details">
-                                <h2> Set up dev environment </h2>
-                                <div class="bottom">
-                                    <p class="tag low"> Low </p>
-                                    <p> Today </p>
-                                    <p> Work </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- todos are added dynamically here -->
                 </div>
             </div>
         </div>
@@ -174,31 +132,29 @@
 
                 <div class="input-group">
                     <label for="detail-title">Title *</label>
-                    <input type="text" id="detail-title" name="title" value="Submit project proposal to client"
-                        spellcheck="true">
+                    <input type="text" id="detail-title" name="title" spellcheck="true">
                 </div>
 
                 <div class="input-group">
                     <label for="detail-desc">Description</label>
-                    <textarea id="detail-desc" name="desc"
-                        spellcheck="true">Finalize the Q3 proposal and send to Sarah. Include revised budget breakdown and timeline.</textarea>
+                    <textarea id="detail-desc" name="desc" spellcheck="true"></textarea>
                 </div>
 
                 <div class="input-row">
                     <div class="input-group">
                         <label for="detail-due-date">Due Date</label>
-                        <input type="date" id="detail-due-date" name="due-date" value="2026-06-23">
+                        <input type="date" id="detail-due-date" name="due-date">
                     </div>
                     <div class="input-group">
                         <label for="detail-project">Project</label>
-                        <input type="text" id="detail-project" name="project" value="Work">
+                        <input type="text" id="detail-project" name="project">
                     </div>
                 </div>
 
                 <div class="input-group">
                     <label>Priority</label>
                     <div class="priority-group">
-                        <button type="button" class="priority-btn active-high" data-value="high">High</button>
+                        <button type="button" class="priority-btn" data-value="high">High</button>
                         <button type="button" class="priority-btn" data-value="medium">Medium</button>
                         <button type="button" class="priority-btn" data-value="low">Low</button>
                     </div>
@@ -207,16 +163,13 @@
                 <div class="input-group">
                     <label>Checklist</label>
                     <div class="checklist">
-                        <label class="check-item completed"><input type="checkbox" checked> Draft outline</label>
-                        <label class="check-item completed"><input type="checkbox" checked> Add budget table</label>
-                        <label class="check-item"><input type="checkbox"> Review with manager</label>
-                        <label class="check-item"><input type="checkbox"> Send to client</label>
-                        <button type="button" class="add-check-item"> Add item</button>
+                        <!-- filled dynamically by renderChecklist() -->
                     </div>
+                    <hr>
                 </div>
 
                 <div class="form-actions">
-                    <button id="detail-delete" type="button">Delete</button>
+                    <button id="detail-cancel" type="button"> Cancel</button>
                     <button id="detail-save" type="button">Save changes</button>
                 </div>
             </div>

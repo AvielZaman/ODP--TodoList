@@ -1,28 +1,46 @@
 import "./styles.css";
-import { compareAsc, format } from "date-fns";
-
-format(new Date(2014, 1, 11), "yyyy-MM-dd");
-//=> '2014-02-11'
-
-const dates = [
-    new Date(1995, 6, 2),
-    new Date(1987, 1, 11),
-    new Date(1989, 6, 10),
-];
-dates.sort(compareAsc);
-//=> [
-//   Wed Feb 11 1987 00:00:00,
-//   Mon Jul 10 1989 00:00:00,
-//   Sun Jul 02 1995 00:00:00
-// ]
+import {openClosePanel, addTodo} from "./DOM_manipulate.js";
 
 
-const container = document.getElementById('container');
-
-document.querySelectorAll('.view-todos-item').forEach(item => {
-    item.addEventListener('click', () => container.classList.toggle('panel-open'));
+// run once on load — save/delete buttons close the panel
+document.getElementById('detail-save').addEventListener('click', () => {
+    document.getElementById('container').classList.remove('panel-open');
+});
+document.getElementById('detail-cancel').addEventListener('click', () => {
+    document.getElementById('container').classList.remove('panel-open');
 });
 
-document.getElementById('detail-save').addEventListener('click', () => container.classList.remove('panel-open'));
-document.getElementById('detail-delete').addEventListener('click', () => container.classList.remove('panel-open'));
+addTodo();
+openClosePanel();
+
+class Todo {
+    #title;
+    #desc;
+    #date;
+    #project;
+    #priority;
+
+    constructor(title, desc, date, project, priority) {
+        this.#title = title;
+        this.#desc = desc;
+        this.#date = date;
+        this.#project = project;
+        this.#priority = priority;
+    }
+
+    get title() { return this.#title; }
+    set title(newTitle) { this.#title = newTitle; }
+
+    get desc() { return this.#desc; }
+    set desc(newDesc) { this.#desc = newDesc; }
+
+    get date() { return this.#date; }
+    set date(newDate) { this.#date = newDate; }
+
+    get project() { return this.#project; }
+    set project(newProject) { this.#project = newProject; }
+
+    get priority() { return this.#priority; }
+    set priority(newPriority) { this.#priority = newPriority; }
+}
 
